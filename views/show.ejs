@@ -4,3 +4,7 @@
 <img src="<%=site.image%>" alt="">
 
 <p><%= site.description %></p>
+
+<% site.comments.forEach(function(comment){ %>
+  <p><strong><%= comment.author %></strong> - <%= comment.text %></p>
+<% }) %>
