@@ -6,17 +6,17 @@ var data = [
   {
     name: "First Camp",
     image: "https://images.unsplash.com/photo-1515529112721-c52c4bcb4f87?auto=format&fit=crop&w=1650&q=80",
-    description: "This is the first camp"
+    description: "industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset shee"
   },
   {
     name: "Second Camp",
     image: "https://images.unsplash.com/photo-1515285768613-9efbec9fe26b?auto=format&fit=crop&w=1650&q=80",
-    description: "This is the second camp"
+    description: "This is the second camp industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset shee"
   },
   {
     name: "Third Camp",
     image: "https://images.unsplash.com/photo-1516054719048-38394ee6cf3e?auto=format&fit=crop&w=2449&q=80",
-    description: "This is the third camp"
+    description: "This is the third camp industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset shee"
   }
 ]
 
