@@ -39,6 +39,7 @@ router.post("/", middleware.isLoggedIn, function(req,res){
 router.get("/new", middleware.isLoggedIn, function(req,res){
   res.render("campgrounds/new");
 })
+
 //Campground Show Individual
 router.get("/:id", function(req,res){
   Campground.findById(req.params.id).populate("comments").exec(function(err, foundCamp){
@@ -46,6 +47,39 @@ router.get("/:id", function(req,res){
       console.log(err);
     }else {
       res.render("campgrounds/show", {site: foundCamp});
+    }
+  })
+})
+
+//Campground Edit Form
+router.get('/:id/edit', function(req, res){
+  Campground.findById(req.params.id, function(err, foundCamp){
+    if(err){
+      res.redirect('/campgrounds');
+    }else{
+      res.render('campgrounds/edit', {campground: foundCamp});
+    }
+  })
+})
+
+//Campground Update Action
+router.put('/:id', function(req,res){
+  Campground.findByIdAndUpdate(req.params.id, req.body.campground, function(err, updatedCamp){
+    if(err){
+      res.redirect('/campgrounds');
+    }else{
+      res.redirect('/campgrounds/' + req.params.id);
+    }
+  })
+})
+
+//Delete Campground
+router.delete('/:id', function(req,res){
+  Campground.findByIdAndRemove(req.params.id, function(err){
+    if(err){
+      res.redirect('/campgrounds');
+    }else{
+      res.redirect('/campgrounds')
     }
   })
 })
