@@ -29,7 +29,6 @@ router.post("/", middleware.isLoggedIn, function(req,res){
     if(err){
       console.log(err);
     }else{
-      console.log(newlyCreated);
       res.redirect("campgrounds");
     }
   })
@@ -52,18 +51,14 @@ router.get("/:id", function(req,res){
 })
 
 //Campground Edit Form
-router.get('/:id/edit', function(req, res){
+router.get('/:id/edit',middleware.checkCampgroundOwnership, function(req, res){
   Campground.findById(req.params.id, function(err, foundCamp){
-    if(err){
-      res.redirect('/campgrounds');
-    }else{
-      res.render('campgrounds/edit', {campground: foundCamp});
-    }
+    res.render('campgrounds/edit', {campground: foundCamp});
   })
 })
 
 //Campground Update Action
-router.put('/:id', function(req,res){
+router.put('/:id',middleware.checkCampgroundOwnership, function(req,res){
   Campground.findByIdAndUpdate(req.params.id, req.body.campground, function(err, updatedCamp){
     if(err){
       res.redirect('/campgrounds');
@@ -74,7 +69,7 @@ router.put('/:id', function(req,res){
 })
 
 //Delete Campground
-router.delete('/:id', function(req,res){
+router.delete('/:id',middleware.checkCampgroundOwnership, function(req,res){
   Campground.findByIdAndRemove(req.params.id, function(err){
     if(err){
       res.redirect('/campgrounds');
