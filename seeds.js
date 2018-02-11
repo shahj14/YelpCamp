@@ -35,18 +35,18 @@ function seedDB(){
           }else {
             console.log("Added campground");
             //create comment
-            Comment.create({
-              text: "This is great!",
-              author: "Jeet"
-            }, function(err,comment){
-              if(err){
-                console.log(err);
-              }else{
-                camp.comments.push(comment._id);
-                camp.save();
-                console.log("created new comment");
-              }
-            })
+            // Comment.create({
+            //   text: "This is great!",
+            //   author: "Jeet"
+            // }, function(err,comment){
+            //   if(err){
+            //     console.log(err);
+            //   }else{
+            //     camp.comments.push(comment._id);
+            //     camp.save();
+            //     console.log("created new comment");
+            //   }
+            // })
           }
         });
       })
